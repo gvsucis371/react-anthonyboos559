@@ -1,0 +1,35 @@
+
+.page {
+    border: black;
+    border-radius: 10px;
+    border-style: solid;
+    padding: 5px;
+}
+
+.entry {
+    border: red;
+    border-radius: 10px;
+    border-style: solid;
+    margin: 5px;
+}
+
+.entries {
+    border: blue;
+    border-radius: 10px;
+    border-style: solid;
+    margin: 5px;
+}
+
+.li {
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.field {
+    padding: 5px;
+}
+
+.button {
+    padding: 5px;
+    border-radius: 15px;
+}

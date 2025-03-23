@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <style>
+        .label {
+            display: inline-block;
+            width: 6em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Song Details</h1>
+
+    <span><span class='label'>Name:</span>
+    <%= song.name %>
+        </span><br>
+
+        <span><span class='label'>Artist:</span>
+        <%- song.artist %>
+            </span><br>
+            <span><span class='label'>Album:</span>
+            <%= song.album %>
+                </span><br>
+                <span><span class='label'>Duration:</span>
+                <%= song.duration %>
+                    </span><br>
+                    <span><span class='label'>Performances:</span>
+                    <ul>
+                        <% song.performances.forEach(function(performance) { %>
+                          <li><%= performance %></li>
+                        <% }) %>
+                      </ul>
+                        </span><br>
+
+                        <p>
+                            <a href="/songs">Back</a>
+                        </p>
+
+</body>
+
+</html>

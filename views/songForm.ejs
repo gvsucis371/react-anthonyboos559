@@ -1,0 +1,50 @@
+<% 
+  if (song.id) {
+    submitLabel = "Update Song";
+    route = `/songs/${song.id}`;
+  } else {
+    submitLabel = "Create Song";
+    route = "/songs";
+  }
+%>
+    <% if (song.errors.length > 0) { %>
+        <% console.log("Found errors"); console.log(song.errors); %>
+
+            <div>
+                <p>Errors:</p>
+                <ul>
+                    <%- song.errors.map((item) => `<li>${item}</li>` ).join("\n"); %>
+                </ul>
+            </div>
+            <% } %>
+
+                <form action="<%=route%>" accept-charset="UTF-8" method="post">
+                    <div class="field">
+                        <label for="song_name">Name</label>
+                        <input type="text" name="song[name]" id="song_name" value="<%= song.name %>">
+                    </div>
+
+                    <div class=" field ">
+                        <label for="song_artist ">Artist</label>
+                        <input name="song[artist]" id="song_artist " value="<%= song.artist %>"/>
+                    </div>
+
+                    <div class="field ">
+                        <label for="song_album ">Album</label>
+                        <input type="text" name="song[album]" id="song_album" value="<%= song.album %>" />
+                    </div>
+
+                    <div class="field ">
+                        <label for="song_duration ">Duration</label>
+                        <input type="text" name="song[duration]" id="song_duration" value="<%= song.duration %>" />
+                    </div>
+
+                    <div class="field ">
+                        <label for="song_performances ">Performances</label>
+                        <input type="text" name="song[performances]" id="song_performances" value="<%= song.performances %>" />
+                    </div>
+
+                    <div class="actions ">
+                        <input type="submit" name="commit" value="<%= submitLabel %>" />
+                    </div>
+                </form>
